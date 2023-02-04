@@ -1,0 +1,261 @@
+<html>
+    <head>
+        <title>Home</title>
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/edac0d230c.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="public/css/style.css">
+    </head>
+    <body>
+
+
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand me-5" href="/">
+                    <img src="/public/images/logo.png" alt="logo">
+                </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item me-5 fs-5">
+                    <a class="nav-link active fw-bold" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item fs-5">
+                    <a class="nav-link" href="/add-project">Add Project</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                   
+                </ul>
+                <div>
+                    <form action="/contact-me" class="d-flex align-items-center m-auto">
+                        <button class="btn btn-dark px-4 py-1" type="submit">Contact Me</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </nav>
+  
+        <div class="container-fluid bg-dark-subtle p-5">
+            <div class="container gap-5 m-auto row p-5 rounded border border-light bg-light shadow-lg align-items-center">
+                <div class="col-sm-8 text-break">
+                    <div>
+                        <h2 class="mb-4 fw-bold">Hi Welcome to my hut</h2>
+                        <p style="text-align: justify;">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit esse odio animi facilis? Voluptates saepe sapiente fuga dolorem, ipsum voluptatum quam maxime at voluptatibus vitae. Blanditiis cumque repudiandae eveniet?
+                            Eligendi rem aperiam modi dicta enim harum voluptatum alias, aliquam explicabo velit nesciunt aut quisquam minus sequi sed eveniet voluptatibus possimus suscipit commodi tenetur id deserunt sit. Ab, sed voluptates.
+                            Sapiente voluptatibus iste quas, consectetur facere ullam adipisci illum eius soluta assumenda ipsum suscipit impedit minima autem rerum. Aut veniam nobis explicabo excepturi voluptatem quas at sunt exercitationem illo animi?
+                        </p>
+
+                        <div class="d-flex flex-row">
+                            <div class="p-2 align-items-center">
+                                <button class="btn btn-dark px-4 py-1  rounded-pill m-auto" onclick="window.open('https://wa.me/6287850360603/?text=Halo%2C+apakah+ini+Doni+Darmawan+%3F');" >Contact</button>
+                            </div>
+                            <div class="p-2">
+                                <a class="flex-row d-flex align-items-center text-decoration-none text-black" href="https://drive.google.com/file/d/1sOGTKeRcA8P1nWBIG9qGuoXRm5Ms31QY/view?usp=sharing" target="_blank">
+                                    <p class="p-2 m-auto">download CV</p> 
+                                    <i class="fa-solid fa-download fa-lg p-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="d-flex flex-row mt-5">
+                        <a class="p-1 col-sm-1 text-black" href="https://www.linkedin.com/in/doni-darmawan-9a2394263/" target="_blank">
+                            <i class="fa-brands fa-linkedin fa-2x "></i>
+                        </a>
+                        
+                        <a class="p-1 col-sm-1 text-black" href="https://www.instagram.com/doni_drmwn_/" target="_blank">
+                            <i class="fa-brands fa-instagram fa-2x"></i>
+                        </a>
+                        
+                        <a class="p-1 col-sm-1 text-black" href="https://www.facebook.com/doni.darmawan.984/" target="_blank">
+                            <i class="fa-brands fa-facebook fa-2x"></i>
+                        </a>
+                        
+                        <a class="p-1 col-sm-1 text-black" href="https://twitter.com/zhond_" target="_blank">
+                            <i class="fa-brands fa-twitter fa-2x"></i>
+                        </a>
+                    </div>
+                </div>    
+                <div class="col card shadow-lg" style="width: 5 rem;">
+                    <img src="public/images/me.jpg" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h2 class="card-title fw-bold">Doni Darmawan</h2>
+                        <p>Fullstack Developer</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="container p-0">
+            <h1 class="text-center my-5 fw-bold">MY PROJECT</h1>
+            <div class="row row-cols-1 row-cols-md-3 m-auto" id="containerProject">
+                <div class="col mb-4">
+                    <div class="card shadow-lg p-3">
+                        <img src="public/images-sample/3.jpg" alt=""  class="rounded-4 mb-3 card-img-top project-img">
+                        <div class="card-body">
+                            <a class="text-decoration-none text-black fw-bold fs-5 mb-0 card-title"href="detail-project.html">
+                                Dumbways mobile app - 2023
+                            </a>
+                            <p>durasi: 3 bulan</p>
+                            <p class="fw-semibold card-text">App that used for dumbways student, it was deployed and can downloaded on playstore.
+                                Happy download 
+                            </p>
+                            <div class="my-4">
+                                <i class="me-3 fa-brands fa-node-js fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-react fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-vuejs fa-2xl"></i>
+                            </div>
+                            <div class="d-flex row gap-2 container-fluid m-auto p-0">
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">edit</button>
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card shadow-lg p-3">
+                        <img src="public/images-sample/1.jpg" alt=""  class="rounded-4 mb-3 card-img-top project-img">
+                        <div class="card-body">
+                            <a class="text-decoration-none text-black fw-bold fs-5 mb-0 card-title"href="detail-project.html">
+                                Dumbways mobile app - 2023
+                            </a>
+                            <p>durasi: 3 bulan</p>
+                            <p class="fw-semibold card-text">App that used for dumbways student, it was deployed and can downloaded on playstore.
+                                Happy download 
+                            </p>
+                            <div class="my-4">
+                                <i class="me-3 fa-brands fa-node-js fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-react fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-vuejs fa-2xl"></i>
+                            </div>
+                            <div class="d-flex row gap-2 container-fluid m-auto p-0">
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">edit</button>
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card shadow-lg p-3">
+                        <img src="public/images-sample/2.jpg" alt=""  class="rounded-4 mb-3 card-img-top project-img">
+                        <div class="card-body">
+                            <a class="text-decoration-none text-black fw-bold fs-5 mb-0 card-title"href="detail-project.html">
+                                Dumbways mobile app - 2023
+                            </a>
+                            <p>durasi: 3 bulan</p>
+                            <p class="fw-semibold card-text">App that used for dumbways student, it was deployed and can downloaded on playstore.
+                                Happy download 
+                            </p>
+                            <div class="my-4">
+                                <i class="me-3 fa-brands fa-node-js fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-react fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-vuejs fa-2xl"></i>
+                            </div>
+                            <div class="d-flex row gap-2 container-fluid m-auto p-0">
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">edit</button>
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card shadow-lg p-3">
+                        <img src="public/images-sample/4.jpg" alt=""  class="rounded-4 mb-3 card-img-top project-img">
+                        <div class="card-body">
+                            <a class="text-decoration-none text-black fw-bold fs-5 mb-0 card-title"href="detail-project.html">
+                                Dumbways mobile app - 2023
+                            </a>
+                            <p>durasi: 3 bulan</p>
+                            <p class="fw-semibold card-text">App that used for dumbways student, it was deployed and can downloaded on playstore.
+                                Happy download 
+                            </p>
+                            <div class="my-4">
+                                <i class="me-3 fa-brands fa-node-js fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-react fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-vuejs fa-2xl"></i>
+                            </div>
+                            <div class="d-flex row gap-2 container-fluid m-auto p-0">
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">edit</button>
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col mb-4">
+                    <div class="card shadow-lg p-3">
+                        <img src="public/images-sample/5.jpg" alt=""  class="rounded-4 mb-3 card-img-top project-img">
+                        <div class="card-body">
+                            <a class="text-decoration-none text-black fw-bold fs-5 mb-0 card-title"href="detail-project.html">
+                                Dumbways mobile app - 2023
+                            </a>
+                            <p>durasi: 3 bulan</p>
+                            <p class="fw-semibold card-text">App that used for dumbways student, it was deployed and can downloaded on playstore.
+                                Happy download 
+                            </p>
+                            <div class="my-4">
+                                <i class="me-3 fa-brands fa-node-js fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-react fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-vuejs fa-2xl"></i>
+                            </div>
+                            <div class="d-flex row gap-2 container-fluid m-auto p-0">
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">edit</button>
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+                <div class="col mb-4">
+                    <div class="card shadow-lg p-3">
+                        <img src="public/images-sample/6.jpg" alt=""  class="rounded-4 mb-3 card-img-top project-img">
+                        <div class="card-body">
+                            <a class="text-decoration-none text-black fw-bold fs-5 mb-0 card-title"href="detail-project.html">
+                                Dumbways mobile app - 2023
+                            </a>
+                            <p>durasi: 3 bulan</p>
+                            <p class="fw-semibold card-text">App that used for dumbways student, it was deployed and can downloaded on playstore.
+                                Happy download 
+                            </p>
+                            <div class="my-4">
+                                <i class="me-3 fa-brands fa-node-js fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-react fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-vuejs fa-2xl"></i>
+                            </div>
+                            <div class="d-flex row gap-2 container-fluid m-auto p-0">
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">edit</button>
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+                <div class="col mb-4">
+                    <div class="card shadow-lg p-3">
+                        <img src="public/images-sample/3.jpg" alt=""  class="rounded-4 mb-3 card-img-top project-img">
+                        <div class="card-body">
+                            <a class="text-decoration-none text-black fw-bold fs-5 mb-0 card-title"href="detail-project.html">
+                                Dumbways mobile app - 2023
+                            </a>
+                            <p>durasi: 3 bulan</p>
+                            <p class="fw-semibold card-text">App that used for dumbways student, it was deployed and can downloaded on playstore.
+                                Happy download 
+                            </p>
+                            <div class="my-4">
+                                <i class="me-3 fa-brands fa-node-js fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-react fa-2xl"></i>
+                                <i class="me-3  fa-brands fa-vuejs fa-2xl"></i>
+                            </div>
+                            <div class="d-flex row gap-2 container-fluid m-auto p-0">
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">edit</button>
+                                <button class="col btn btn-dark border border-dark border-4 fw-bold fs-5 text py-0">delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>                        
+            </div>
+        </div>
+    </body>
+</html>

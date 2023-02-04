@@ -1,4 +1,25 @@
-*{
+html, body {
+    height: 100%;
+}
+
+.card{
+    padding: 0;
+    
+}
+.card-img-top{
+    padding: 0;
+    height: 400px;
+    width: 100%;
+}
+
+.project-img{
+    height: 300px;
+}
+.nav{
+    background-color: #F4F3F3;
+}
+
+/* *{
     margin: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -57,7 +78,7 @@ button{
     justify-content: flex-end;
 }
 
-/* Styling nav */
+/* Styling nav 
     nav{
         background-color: #7286D3;
         display: flex;
@@ -115,7 +136,7 @@ button{
     
 /* Styling nav */
 
-/* Index HTML */
+/* Index HTML 
 
 .main-container{
     padding:40px 10%;
@@ -199,7 +220,7 @@ button{
 /* Index HTML */
 
 
-/* Contact Me */
+/* Contact Me 
 .main-form-container{
     padding-top:50px ;
     background-color: #E5E0FF;
@@ -232,7 +253,7 @@ textarea{
 /* Contact me */
 
 
-/* My Project */
+/* My Project 
 
 
 
@@ -386,9 +407,9 @@ textarea{
     width: 49%;
 }
 
-/* My Project */
+/* My Project 
 
-/* Project Detail */
+/* Project Detail 
 
 .main-container-project{
     background-color: #E5E0FF;
@@ -455,4 +476,7 @@ textarea{
     text-align: justify;
     margin-top: 50px;
 }
-/* Project Detail*/
+/* Project Detail
+
+
+*/
