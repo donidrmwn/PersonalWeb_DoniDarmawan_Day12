@@ -3,14 +3,14 @@
         <title>My Project</title>
         <script src="https://kit.fontawesome.com/edac0d230c.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="public/css/style.css">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container">
                 <a class="navbar-brand me-5" href="/">
-                    <img src="public/images/logo.png" alt="logo">
+                    <img src="/public/images/logo.png" alt="logo">
                 </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -18,16 +18,35 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item me-5 fs-5">
-                    <a class="nav-link  " aria-current="page" href="/">Home</a>
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
                   </li>
-                  <li class="nav-item fs-5">
-                    <a class="nav-link active fw-bold" href="/my-project">Add Project</a>
+                  <li class="nav-item fs-5  active fw-bold">
+                    {{if .Data.IsLogin}}
+                        <a class="nav-link" href="/add-project">Add Project</a>
+                    {{end}}
                   </li>
                   <li class="nav-item dropdown">
                    
                 </ul>
                 <div>
-                    <form action="/contact-me" class="d-flex align-items-center m-auto">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item me-5 fs-5">
+                        <a class="nav-link" aria-current="page" href="/form-register">
+                            {{if .Data.IsLogin}}
+                                Halo, {{.Data.Username}}  
+                            {{else}}
+                                Register
+                            {{end}}
+                        </a>
+                    </li>
+                    <li class="nav-item fs-5">
+                            {{if .Data.IsLogin}}
+                                <a class="nav-link" href="/logout">Logout</a>
+                            {{else}}
+                                <a class="nav-link" href="/form-login">Login</a>
+                            {{end}}
+                    </li>
+                    <form action="/contact-me" class="d-flex align-items-center m-auto ms-5">
                         <button class="btn btn-dark px-4 py-1" type="submit">Contact Me</button>
                     </form>
                 </div>
@@ -40,53 +59,63 @@
             <div class="container m-auto">
                 <h1 class="text-center fw-bold">ADD MY PROJECT</h1>
                 <div class="container w-50 px-5 mt-4">
-                    <form action="/getDataProject" method="POST">
-                        <!--Project Name-->
+                    <form  
+                        {{if .ProjectDetail.Id}} 
+                            action="/update-project/{{.ProjectDetail.Id}}" 
+                        {{else}} 
+                            action="/get-data-project" 
+                        {{end}} method="POST" enctype="multipart/form-data">
+                    
+                        <!--Project Name-->   
                         <div class="mb-3">
                             <label for="projectName" class="fw-semibold fs-5">Project Name</label>
-                            <input name="projectName" class="w-100 border border-0 rounded-1" type="text" id="projectName">
+                            <input name="projectName" class="w-100 border border-0 rounded-1" type="text" id="projectName" value="{{.ProjectDetail.Project_name}}">
                         </div>
 
                         <!--Project date-->
                         <div class="d-flex w-100 row m-auto mb-3 p-0 gap-3">
                             <div class="col p-0">
                                 <label for="startDate" class="fw-semibold fs-5">Start Date</label>
-                                <input name="startDate" class="w-100 border border-0 rounded-1" type="date" id="startDate">
+                                <input name="startDate" class="w-100 border border-0 rounded-1" type="date" id="startDate" value="{{.ProjectDetail.Start_date_format}}">
                             </div>
 
                             <div class="col p-0">
                                 <label for="endDate" class="fw-semibold fs-5">End Date</label>
-                                <input name="endDate" class="w-100 border border-0 rounded-1"  type="date" id="endDate">
+                                <input name="endDate" class="w-100 border border-0 rounded-1"  type="date" id="endDate" value="{{.ProjectDetail.End_date_format}}">
                             </div>
                         </div>
 
                         <!-- Description -->
                         <div class="mb-3">
                             <label for="description" class="fw-semibold fs-5">Description</label>
-                            <textarea name="description" class="w-100 form-control " id="description"></textarea>
+                            <textarea name="description" class="w-100 form-control " id="description" value="">{{.ProjectDetail.Description}}</textarea>
                         </div>
 
                         <!-- Technologies -->
                         <div class="m-auto mb-2">
                         <label class="fw-semibold fs-5">Technologies</label>
                             <div class="row m-auto">
-                                <div class="col-6 col-sm-3 p-0 mb-2">
-                                    <input name="nodeJs" type="checkbox" id="nodeJs">
-                                    <label for="nodeJs">Node JS</label>
-                                </div>
-                                <div class="col-6 col-sm-3 p-0 mb-2">
-                                    <input name="reactJs" type="checkbox" id="reactJs">
-                                    <label for="reactJs">React JS</label>
-                                </div>
-                                <div class="w-100 me-5"></div>
-                                <div class="col-6 col-sm-3 p-0 mb-2">
-                                    <input name="vueJs" type="checkbox" id="vueJs">
-                                    <label for="vueJs">Vue JS</label>
-                                </div>   
-                                <div class="col-6 col-sm-3 p-0 mb-2">
-                                    <input name="javaScript" type="checkbox" id="javaScript">
-                                    <label for="javaScript">Javascript</label>
-                                </div> 
+
+                                    <div class="col-6 col-sm-3 p-0 mb-2">
+                                        
+                                        <input name="technologies" type="checkbox" id="nodeJs" value="fa-node-js">
+                                        <label for="nodeJs">Node JS</label>
+                                    </div>
+                                    <div class="col-6 col-sm-3 p-0 mb-2">
+                                        <input name="technologies" type="checkbox" id="reactJs" value="fa-react">
+                                        <label for="reactJs">React JS</label>
+                                    </div>
+
+                                    <div class="w-100 me-5"></div>
+                                    
+                                    <div class="col-6 col-sm-3 p-0 mb-2">
+                                        <input name="technologies" type="checkbox" id="vueJs" value="fa-vuejs">
+                                        <label for="vueJs">Vue JS</label>
+                                    </div>   
+                                    <div class="col-6 col-sm-3 p-0 mb-2">
+                                        <input name="technologies" type="checkbox" id="javaScript" value="fa-js">
+                                        <label for="javaScript">Javascript</label>
+                                    </div> 
                             </div>
                         </div>
 
@@ -100,21 +129,28 @@
                                     </div>
                                     <input class="border-0 bg-white w-100" id="textProjectImage" type="text" disabled>
                                     <label for="projectImage" class="d-flex align-items-center bg-white">   
-                                        <img src="public/images/file.png" alt="">                               
+                                        <img src="/public/images/file.png" alt="">                               
                                     </label>
                                 </div >
-                                <input type="file" id="projectImage" onchange="getFileName()" hidden>
+                                <input type="file" name="upload-image"  id="projectImage" onchange="getFileName()" hidden>
                             </div>
                         </div>
 
                         <!--Button submit-->
                         <div class="d-flex justify-content-end">
-                            <button class="btn btn-dark px-4 py-1" type="submit" onclick="insertProject(event)">Submit</button>
+                            <button class="btn btn-dark px-4 py-1" type="submit" onclick="insertProject(event)">
+                                {{if .ProjectDetail.Id}}
+                                    Update
+                                {{else}}
+                                    Submit
+                                {{end}}
+                           
+                            </button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <script src="public/js/my-project.js"></script>
+        <!-- <script src="public/js/my-project.js"></script> -->
     </body>
 </html>
